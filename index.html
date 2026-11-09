@@ -91,7 +91,17 @@
       cursor: pointer;
     }
     button:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
-    button.active, button.pdf {
+    a.btn {
+      display: inline-block;
+      border: 1px solid var(--orange);
+      border-radius: 7px;
+      font-weight: bold;
+      padding: 10px 17px;
+      text-decoration: none;
+      line-height: 1.2;
+    }
+    a.btn:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+    button.active, button.pdf, a.pdf {
       background: var(--orange);
       color: #101c2a;
       border-color: var(--orange);
@@ -194,7 +204,7 @@
 <nav class="toolbar" aria-label="Idioma / Language">
   <button id="esBtn" class="active" aria-pressed="true" onclick="setLanguage('es')" lang="es">Español</button>
   <button id="enBtn" aria-pressed="false" onclick="setLanguage('en')" lang="en">English</button>
-  <button class="pdf" onclick="window.print()" data-es="Descargar PDF" data-en="Save as PDF">Descargar PDF</button>
+  <a class="pdf btn" id="pdfLink" href="cancha-segura-espanol.pdf" download data-es="Descargar PDF" data-en="Download PDF">Descargar PDF</a>
 </nav>
 
 <main>
@@ -346,6 +356,8 @@
     document.getElementById("enBtn").classList.toggle("active", lang === "en");
     document.getElementById("esBtn").setAttribute("aria-pressed", lang === "es");
     document.getElementById("enBtn").setAttribute("aria-pressed", lang === "en");
+    // The download is the ready-made PDF in the language on screen.
+    document.getElementById("pdfLink").href = lang === "en" ? "cancha-segura-english.pdf" : "cancha-segura-espanol.pdf";
     try { localStorage.setItem("cs-lang", lang); } catch (e) {}
 
     document.title = lang === "es"
