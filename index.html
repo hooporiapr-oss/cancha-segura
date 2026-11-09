@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CANCHA SEGURA: iniciativa de transformación comunitaria de Canóvanas Basketball.">
+  <title>CANCHA SEGURA | Canóvanas Basketball</title>
+  <!-- Link previews (WhatsApp, iMessage, email). Absolute addresses: if
+       the site ends up on another domain, change the two URLs below. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CANCHA SEGURA | Canóvanas Basketball">
+  <meta property="og:description" content="Una iniciativa de transformación comunitaria a través del baloncesto y el desarrollo cognitivo. De Canóvanas para Puerto Rico.">
+  <meta property="og:url" content="https://cancha-segura.onrender.com/">
+  <meta property="og:image" content="https://cancha-segura.onrender.com/cogno.jpg">
+  <meta property="og:locale" content="es_PR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="image" href="cogno.jpg">
+  <style>
+    :root {
+      --navy: #101c2a;
+      --orange: #ff7a18;
+      --cream: #faf8f4;
+      --ink: #223044;
+      --muted: #617084;
+      --line: #dfe4e8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+    header {
+      position: relative;
+      background-color: var(--navy);
+      background-image:
+        linear-gradient(180deg, rgba(16,28,42,.55) 0%, rgba(16,28,42,.72) 55%, rgba(16,28,42,.95) 100%),
+        url("cogno.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: clamp(90px, 18vw, 170px) 24px clamp(60px, 10vw, 96px);
+      text-align: center;
+      text-shadow: 0 2px 12px rgba(0,0,0,.45);
+    }
+    .eyebrow {
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    h1 {
+      font-size: clamp(42px, 8vw, 82px);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin: 18px 0;
+    }
+    .subtitle {
+      font-size: clamp(17px, 3vw, 23px);
+      max-width: 780px;
+      margin: 0 auto 20px;
+    }
+    .tagline {
+      color: #ffd2ae;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      background: white;
+      border-bottom: 1px solid var(--line);
+      padding: 12px;
+    }
+    button {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: white;
+      color: var(--navy);
+      font-weight: bold;
+      padding: 10px 17px;
+      cursor: pointer;
+    }
+    button:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+    button.active, button.pdf {
+      background: var(--orange);
+      color: #101c2a;
+      border-color: var(--orange);
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 30px 22px 80px;
+    }
+    section {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+      break-inside: avoid;
+    }
+    h2 {
+      font-size: 27px;
+      color: var(--navy);
+      line-height: 1.25;
+      margin: 0 0 18px;
+    }
+    h3 {
+      font-size: 19px;
+      color: var(--navy);
+      margin: 24px 0 8px;
+    }
+    p { margin: 0 0 15px; }
+    ul { padding-left: 22px; }
+    li { margin-bottom: 8px; }
+    .lead {
+      font-size: 19px;
+      line-height: 1.75;
+    }
+    .highlight {
+      border-left: 5px solid var(--orange);
+      background: #fff2e7;
+      padding: 22px;
+      border-radius: 0 10px 10px 0;
+      margin: 25px 0;
+      font-size: 19px;
+      font-weight: bold;
+    }
+    .feature {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 26px;
+      margin: 22px 0;
+    }
+    .feature h3 { margin-top: 0; }
+    .cogno {
+      background: var(--navy);
+      color: white;
+      border-radius: 15px;
+      padding: 32px;
+      margin: 25px 0;
+    }
+    .cogno h2, .cogno h3 { color: white; }
+    .cogno .eyebrow { color: var(--orange); }
+    .cogno ul { columns: 2; column-gap: 30px; }
+    footer {
+      text-align: center;
+      padding: 45px 20px;
+      background: var(--navy);
+      color: white;
+    }
+    footer strong { color: var(--orange); }
+    [hidden] { display: none !important; }
+    @media(max-width: 600px) {
+      .cogno ul { columns: 1; }
+      .feature, .cogno { padding: 20px; }
+      section { padding: 22px 0; }
+    }
+    @media print {
+      @page { size: letter; margin: 16mm; }
+      body { background: white; font-size: 10pt; }
+      .toolbar { display: none !important; }
+      header { padding: 48px 24px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      h1 { font-size: 36pt; }
+      h2 { font-size: 17pt; }
+      h3 { font-size: 12pt; }
+      main { padding: 10px 0; max-width: 100%; }
+      section { padding: 14px 0; }
+      .feature, .cogno, .highlight {
+        break-inside: avoid;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">CANÓVANAS BASKETBALL</div>
+  <h1>CANCHA SEGURA</h1>
+  <p class="subtitle" data-es="Una iniciativa de transformación comunitaria a través del baloncesto y el desarrollo cognitivo." data-en="A community transformation initiative through basketball and cognitive development.">Una iniciativa de transformación comunitaria a través del baloncesto y el desarrollo cognitivo.</p>
+  <p class="tagline" data-es="DE CANÓVANAS PARA PUERTO RICO" data-en="FROM CANÓVANAS TO PUERTO RICO">DE CANÓVANAS PARA PUERTO RICO</p>
+</header>
+
+<nav class="toolbar" aria-label="Idioma / Language">
+  <button id="esBtn" class="active" aria-pressed="true" onclick="setLanguage('es')" lang="es">Español</button>
+  <button id="enBtn" aria-pressed="false" onclick="setLanguage('en')" lang="en">English</button>
+  <button class="pdf" onclick="window.print()" data-es="Descargar PDF" data-en="Save as PDF">Descargar PDF</button>
+</nav>
+
+<main>
+  <section>
+    <h2 data-es="1. Resumen de la iniciativa" data-en="1. Initiative Overview">1. Resumen de la iniciativa</h2>
+    <p class="lead" data-es="CANCHA SEGURA es una iniciativa de impacto comunitario de Canóvanas Basketball que busca prevenir la violencia, desalentar la participación juvenil en actividades delictivas, combatir el acoso escolar y promover el desarrollo integral de niños, niñas y adolescentes." data-en="CANCHA SEGURA is a community impact initiative by Canóvanas Basketball that seeks to prevent violence, discourage youth involvement in criminal activity, combat bullying, and promote the comprehensive development of children and adolescents.">CANCHA SEGURA es una iniciativa de impacto comunitario de Canóvanas Basketball que busca prevenir la violencia, desalentar la participación juvenil en actividades delictivas, combatir el acoso escolar y promover el desarrollo integral de niños, niñas y adolescentes.</p>
+    <p data-es="La iniciativa comenzará en el municipio de Canóvanas, Puerto Rico, mediante un modelo que integra ligas de baloncesto, campamentos, entrenamientos, mentoría, educación contra el bullying y desarrollo cognitivo a través de COGNOGYM." data-en="The initiative will begin in Canóvanas, Puerto Rico, through a model combining basketball leagues, camps, training, mentorship, anti-bullying education, and cognitive development through COGNOGYM.">La iniciativa comenzará en el municipio de Canóvanas, Puerto Rico, mediante un modelo que integra ligas de baloncesto, campamentos, entrenamientos, mentoría, educación contra el bullying y desarrollo cognitivo a través de COGNOGYM.</p>
+    <div class="highlight" data-es="Nuestra propuesta: utilizar el poder del baloncesto para desarrollar mentes más fuertes, jóvenes responsables y comunidades más seguras." data-en="Our proposition: use the power of basketball to develop stronger minds, responsible young people, and safer communities.">Nuestra propuesta: utilizar el poder del baloncesto para desarrollar mentes más fuertes, jóvenes responsables y comunidades más seguras.</div>
+  </section>
+
+  <section>
+    <h2 data-es="2. Nuestra misión" data-en="2. Our Mission">2. Nuestra misión</h2>
+    <p data-es="Impactar positivamente los sectores comunitarios mediante el baloncesto organizado, el entrenamiento cognitivo, la mentoría y la prevención del acoso escolar, creando oportunidades que ayuden a prevenir la violencia, desalentar la actividad delictiva y fortalecer el desarrollo personal." data-en="To positively impact community sectors through organized basketball, cognitive training, mentorship, and bullying prevention, creating opportunities that help prevent violence, discourage criminal activity, and strengthen personal development.">Impactar positivamente los sectores comunitarios mediante el baloncesto organizado, el entrenamiento cognitivo, la mentoría y la prevención del acoso escolar, creando oportunidades que ayuden a prevenir la violencia, desalentar la actividad delictiva y fortalecer el desarrollo personal.</p>
+  </section>
+
+  <section>
+    <h2 data-es="3. Nuestra visión" data-en="3. Our Vision">3. Nuestra visión</h2>
+    <p data-es="Establecer CANCHA SEGURA como un modelo de transformación comunitaria que nazca en Canóvanas y se expanda progresivamente a otros municipios de Puerto Rico, convirtiendo las canchas en espacios de oportunidad, inclusión, liderazgo y desarrollo." data-en="To establish CANCHA SEGURA as a community transformation model beginning in Canóvanas and progressively expanding to other municipalities across Puerto Rico, transforming courts into spaces for opportunity, inclusion, leadership, and development.">Establecer CANCHA SEGURA como un modelo de transformación comunitaria que nazca en Canóvanas y se expanda progresivamente a otros municipios de Puerto Rico, convirtiendo las canchas en espacios de oportunidad, inclusión, liderazgo y desarrollo.</p>
+  </section>
+
+  <section>
+    <h2 data-es="4. El reto comunitario" data-en="4. The Community Challenge">4. El reto comunitario</h2>
+    <p data-es="Distintos sectores de Puerto Rico enfrentan retos relacionados con la violencia, el bullying, la falta de oportunidades recreativas y la desconexión de algunos jóvenes con actividades positivas. CANCHA SEGURA propone una respuesta preventiva basada en la participación constante, la orientación y el fortalecimiento de relaciones saludables." data-en="Different communities in Puerto Rico face challenges involving violence, bullying, limited recreational opportunities, and youth disengagement. CANCHA SEGURA proposes a preventive response based on consistent participation, guidance, and stronger positive relationships.">Distintos sectores de Puerto Rico enfrentan retos relacionados con la violencia, el bullying, la falta de oportunidades recreativas y la desconexión de algunos jóvenes con actividades positivas. CANCHA SEGURA propone una respuesta preventiva basada en la participación constante, la orientación y el fortalecimiento de relaciones saludables.</p>
+  </section>
+
+  <section>
+    <h2 data-es="5. Nuestros programas" data-en="5. Our Programs">5. Nuestros programas</h2>
+
+    <div class="feature">
+      <h3 data-es="Ligas comunitarias de baloncesto" data-en="Community Basketball Leagues">Ligas comunitarias de baloncesto</h3>
+      <p data-es="Ligas organizadas para promover la sana competencia, la disciplina, el trabajo en equipo, el respeto, el liderazgo y el orgullo comunitario. Las ligas facilitarán la participación de jóvenes y familias de distintos sectores." data-en="Organized leagues promoting healthy competition, discipline, teamwork, respect, leadership, and community pride. The leagues will encourage youth and family participation across different neighborhoods.">Ligas organizadas para promover la sana competencia, la disciplina, el trabajo en equipo, el respeto, el liderazgo y el orgullo comunitario. Las ligas facilitarán la participación de jóvenes y familias de distintos sectores.</p>
+    </div>
+
+    <div class="feature">
+      <h3 data-es="Campamentos de baloncesto" data-en="Basketball Camps">Campamentos de baloncesto</h3>
+      <p data-es="Campamentos recreativos y educativos que combinarán destrezas deportivas con mentoría, desarrollo del carácter, prevención del bullying y actividades de entrenamiento cognitivo." data-en="Recreational and educational camps combining basketball skills with mentorship, character development, bullying prevention, and cognitive training activities.">Campamentos recreativos y educativos que combinarán destrezas deportivas con mentoría, desarrollo del carácter, prevención del bullying y actividades de entrenamiento cognitivo.</p>
+    </div>
+
+    <div class="feature">
+      <h3 data-es="Entrenamiento y desarrollo deportivo" data-en="Athletic Training and Development">Entrenamiento y desarrollo deportivo</h3>
+      <p data-es="Sesiones de entrenamiento adaptadas a distintas edades y niveles de experiencia, enfocadas en fundamentos del baloncesto, coordinación, condición física, disciplina y superación personal." data-en="Training sessions adapted to different ages and experience levels, focusing on basketball fundamentals, coordination, physical conditioning, discipline, and personal improvement.">Sesiones de entrenamiento adaptadas a distintas edades y niveles de experiencia, enfocadas en fundamentos del baloncesto, coordinación, condición física, disciplina y superación personal.</p>
+    </div>
+
+    <div class="feature">
+      <h3 data-es="Prevención del bullying y la violencia" data-en="Bullying and Violence Prevention">Prevención del bullying y la violencia</h3>
+      <p data-es="Actividades para fomentar el respeto, la empatía, la inclusión, el autocontrol y la solución pacífica de conflictos. Se establecerán normas claras de conducta y mecanismos apropiados para informar y atender situaciones de acoso." data-en="Activities promoting respect, empathy, inclusion, self-control, and peaceful conflict resolution. Clear conduct standards and appropriate reporting and response procedures will address bullying concerns.">Actividades para fomentar el respeto, la empatía, la inclusión, el autocontrol y la solución pacífica de conflictos. Se establecerán normas claras de conducta y mecanismos apropiados para informar y atender situaciones de acoso.</p>
+    </div>
+
+    <div class="feature">
+      <h3 data-es="Mentoría y participación comunitaria" data-en="Mentorship and Community Engagement">Mentoría y participación comunitaria</h3>
+      <p data-es="Entrenadores, mentores, familias y líderes comunitarios colaborarán para orientar a los participantes, reforzar decisiones positivas y fortalecer los vínculos entre jóvenes y sus comunidades." data-en="Coaches, mentors, families, and community leaders will work together to guide participants, reinforce positive decisions, and strengthen connections between young people and their communities.">Entrenadores, mentores, familias y líderes comunitarios colaborarán para orientar a los participantes, reforzar decisiones positivas y fortalecer los vínculos entre jóvenes y sus comunidades.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="cogno">
+      <div class="eyebrow" data-es="Nuestra innovación distintiva" data-en="Our Signature Innovation">Nuestra innovación distintiva</div>
+      <h2>6. COGNOGYM</h2>
+      <h3 data-es="Entrenamiento cognitivo interactivo" data-en="Interactive Cognitive Training">Entrenamiento cognitivo interactivo</h3>
+      <p data-es="COGNOGYM es el componente innovador de CANCHA SEGURA. Complementa la actividad física con ejercicios digitales interactivos diseñados para retar habilidades cognitivas importantes para el aprendizaje y el desarrollo personal." data-en="COGNOGYM is the innovative component of CANCHA SEGURA. It complements physical activity with interactive digital exercises designed to challenge cognitive abilities important for learning and personal development.">COGNOGYM es el componente innovador de CANCHA SEGURA. Complementa la actividad física con ejercicios digitales interactivos diseñados para retar habilidades cognitivas importantes para el aprendizaje y el desarrollo personal.</p>
+      <p data-es="La plataforma funciona desde el navegador y está optimizada para teléfonos celulares, tabletas y computadoras compatibles. Los participantes pueden seleccionar los ejercicios que desean practicar y progresar a través de distintos niveles." data-en="The platform runs in a browser and is optimized for smartphones, tablets, and compatible computers. Participants can choose the exercises they wish to practice and progress through different levels.">La plataforma funciona desde el navegador y está optimizada para teléfonos celulares, tabletas y computadoras compatibles. Los participantes pueden seleccionar los ejercicios que desean practicar y progresar a través de distintos niveles.</p>
+      <h3 data-es="Áreas de entrenamiento" data-en="Training Areas">Áreas de entrenamiento</h3>
+      <ul id="cognoList"><li>Atención y concentración</li><li>Memoria y recuerdo</li><li>Reconocimiento visual</li><li>Velocidad de reacción</li><li>Patrones y secuencias</li><li>Flexibilidad cognitiva</li><li>Toma de decisiones</li></ul>
+      <p><strong data-es="CANCHA SEGURA desarrolla al jugador. COGNOGYM reta la mente. Juntos contribuyen al desarrollo de la persona." data-en="CANCHA SEGURA develops the player. COGNOGYM challenges the mind. Together, they contribute to personal development.">CANCHA SEGURA desarrolla al jugador. COGNOGYM reta la mente. Juntos contribuyen al desarrollo de la persona.</strong></p>
+      <p><a href="https://hooporia.mobi/" target="_blank" rel="noopener noreferrer" style="color:#ffd2ae" data-es="Conocer nuestros programas interactivos" data-en="Explore our interactive programs">Conocer nuestros programas interactivos</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-es="7. Comenzamos en Canóvanas" data-en="7. Beginning in Canóvanas">7. Comenzamos en Canóvanas</h2>
+    <p data-es="Canóvanas será el punto de partida de CANCHA SEGURA. A través de Canóvanas Basketball, la iniciativa propone comenzar en sectores comunitarios seleccionados, utilizando instalaciones recreativas accesibles y promoviendo la participación de jóvenes, familias y líderes locales." data-en="Canóvanas will be the starting point of CANCHA SEGURA. Through Canóvanas Basketball, the initiative proposes beginning in selected community sectors, using accessible recreational facilities and encouraging participation from youth, families, and local leaders.">Canóvanas será el punto de partida de CANCHA SEGURA. A través de Canóvanas Basketball, la iniciativa propone comenzar en sectores comunitarios seleccionados, utilizando instalaciones recreativas accesibles y promoviendo la participación de jóvenes, familias y líderes locales.</p>
+    <p data-es="Esta primera etapa permitirá organizar ligas, campamentos, entrenamientos, actividades de prevención y acceso a COGNOGYM. La experiencia obtenida ayudará a evaluar resultados, perfeccionar el modelo y preparar su expansión." data-en="This initial phase will establish leagues, camps, training, prevention activities, and access to COGNOGYM. Experience gained will help evaluate outcomes, refine the model, and prepare for expansion.">Esta primera etapa permitirá organizar ligas, campamentos, entrenamientos, actividades de prevención y acceso a COGNOGYM. La experiencia obtenida ayudará a evaluar resultados, perfeccionar el modelo y preparar su expansión.</p>
+    <div class="highlight" data-es="Canóvanas no será simplemente el primer municipio participante. Será el lugar donde nazca una iniciativa con visión para todo Puerto Rico." data-en="Canóvanas will not simply be the first participating municipality. It will be the birthplace of an initiative with a vision for all of Puerto Rico.">Canóvanas no será simplemente el primer municipio participante. Será el lugar donde nazca una iniciativa con visión para todo Puerto Rico.</div>
+  </section>
+
+  <section>
+    <h2 data-es="8. Nuestro enfoque preventivo" data-en="8. Our Prevention Approach">8. Nuestro enfoque preventivo</h2>
+    <p data-es="La criminalidad y la violencia responden a múltiples factores. CANCHA SEGURA no plantea que el deporte por sí solo pueda eliminarlas. Nuestra propuesta consiste en contribuir a la prevención mediante oportunidades positivas, supervisión, mentoría, relaciones saludables y actividades estructuradas." data-en="Crime and violence have multiple contributing factors. CANCHA SEGURA does not claim that sports alone can eliminate them. Our approach seeks to contribute to prevention through positive opportunities, supervision, mentorship, healthy relationships, and structured activities.">La criminalidad y la violencia responden a múltiples factores. CANCHA SEGURA no plantea que el deporte por sí solo pueda eliminarlas. Nuestra propuesta consiste en contribuir a la prevención mediante oportunidades positivas, supervisión, mentoría, relaciones saludables y actividades estructuradas.</p>
+  </section>
+
+  <section>
+    <h2 data-es="9. Evaluación de nuestro impacto" data-en="9. Measuring Our Impact">9. Evaluación de nuestro impacto</h2>
+    <p data-es="La iniciativa buscará evaluar su progreso mediante indicadores de participación, asistencia, retención, actividades realizadas, participación en prevención del bullying, uso y progreso en COGNOGYM y opiniones de jóvenes y familias. Cuando existan datos confiables y colaboración especializada, también se podrán examinar indicadores de seguridad comunitaria." data-en="The initiative will evaluate progress through participation, attendance, retention, activities delivered, bullying-prevention engagement, COGNOGYM usage and progression, and feedback from youth and families. Where reliable data and specialized evaluation partnerships exist, community safety indicators may also be examined.">La iniciativa buscará evaluar su progreso mediante indicadores de participación, asistencia, retención, actividades realizadas, participación en prevención del bullying, uso y progreso en COGNOGYM y opiniones de jóvenes y familias. Cuando existan datos confiables y colaboración especializada, también se podrán examinar indicadores de seguridad comunitaria.</p>
+  </section>
+
+  <section>
+    <h2 data-es="10. De Canóvanas para Puerto Rico" data-en="10. From Canóvanas to Puerto Rico">10. De Canóvanas para Puerto Rico</h2>
+    <p data-es="Nuestra visión es desarrollar un modelo comunitario que pueda adaptarse y expandirse a otros municipios. Las experiencias y resultados de Canóvanas servirán como base para fortalecer la iniciativa y establecer colaboraciones con organizaciones, instituciones y comunidades interesadas en promover el desarrollo juvenil." data-en="Our vision is to develop a community model that can be adapted and expanded to other municipalities. Experiences and results from Canóvanas will provide a foundation for strengthening the initiative and building partnerships with organizations, institutions, and communities committed to youth development.">Nuestra visión es desarrollar un modelo comunitario que pueda adaptarse y expandirse a otros municipios. Las experiencias y resultados de Canóvanas servirán como base para fortalecer la iniciativa y establecer colaboraciones con organizaciones, instituciones y comunidades interesadas en promover el desarrollo juvenil.</p>
+  </section>
+
+  <section>
+    <h2 data-es="11. Nuestro compromiso" data-en="11. Our Commitment">11. Nuestro compromiso</h2>
+    <p data-es="CANCHA SEGURA parte de la convicción de que cada niño, niña y adolescente merece oportunidades para aprender, crecer, participar y desarrollar su potencial. Mediante el baloncesto, la mentoría, la prevención del acoso y COGNOGYM, buscamos contribuir a comunidades más unidas, inclusivas y seguras." data-en="CANCHA SEGURA is grounded in the belief that every child and adolescent deserves opportunities to learn, grow, participate, and reach their potential. Through basketball, mentorship, bullying prevention, and COGNOGYM, we seek to contribute to stronger, more inclusive, and safer communities.">CANCHA SEGURA parte de la convicción de que cada niño, niña y adolescente merece oportunidades para aprender, crecer, participar y desarrollar su potencial. Mediante el baloncesto, la mentoría, la prevención del acoso y COGNOGYM, buscamos contribuir a comunidades más unidas, inclusivas y seguras.</p>
+  </section>
+
+  <section>
+    <h2 data-es="12. Mensaje final" data-en="12. Closing Statement">12. Mensaje final</h2>
+    <p data-es="CANCHA SEGURA es más que un programa de baloncesto. Es una iniciativa de transformación comunitaria que integra deporte, educación, mentoría e innovación para fomentar decisiones positivas y abrir nuevas oportunidades a nuestra juventud." data-en="CANCHA SEGURA is more than a basketball program. It is a community transformation initiative combining sports, education, mentorship, and innovation to encourage positive decisions and create new opportunities for our youth.">CANCHA SEGURA es más que un programa de baloncesto. Es una iniciativa de transformación comunitaria que integra deporte, educación, mentoría e innovación para fomentar decisiones positivas y abrir nuevas oportunidades a nuestra juventud.</p>
+    <div class="highlight" data-es="Mentes más fuertes. Jugadores más fuertes. Comunidades más fuertes." data-en="Stronger Minds. Stronger Players. Stronger Communities.">Mentes más fuertes. Jugadores más fuertes. Comunidades más fuertes.</div>
+  </section>
+</main>
+
+<footer>
+  <h2 style="color:white">CANCHA SEGURA</h2>
+  <p data-es="Una iniciativa de Canóvanas Basketball" data-en="An Initiative of Canóvanas Basketball">Una iniciativa de Canóvanas Basketball</p>
+  <p><strong data-es="DE CANÓVANAS PARA PUERTO RICO" data-en="FROM CANÓVANAS TO PUERTO RICO">DE CANÓVANAS PARA PUERTO RICO</strong></p>
+  <p>COGNOGYM | Cognitive Development</p>
+</footer>
+
+<script>
+  const cognitiveSkills = {
+    es: [
+      "Atención y concentración",
+      "Memoria y recuerdo",
+      "Reconocimiento visual",
+      "Velocidad de reacción",
+      "Patrones y secuencias",
+      "Flexibilidad cognitiva",
+      "Toma de decisiones"
+    ],
+    en: [
+      "Attention and concentration",
+      "Memory and recall",
+      "Visual recognition",
+      "Reaction speed",
+      "Patterns and sequencing",
+      "Cognitive flexibility",
+      "Decision-making"
+    ]
+  };
+
+  function setLanguage(lang) {
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-es][data-en]").forEach(el => {
+      el.textContent = el.dataset[lang];
+    });
+
+    const list = document.getElementById("cognoList");
+    list.replaceChildren();
+
+    cognitiveSkills[lang].forEach(skill => {
+      const li = document.createElement("li");
+      li.textContent = skill;
+      list.appendChild(li);
+    });
+
+    document.getElementById("esBtn").classList.toggle("active", lang === "es");
+    document.getElementById("enBtn").classList.toggle("active", lang === "en");
+    document.getElementById("esBtn").setAttribute("aria-pressed", lang === "es");
+    document.getElementById("enBtn").setAttribute("aria-pressed", lang === "en");
+    try { localStorage.setItem("cs-lang", lang); } catch (e) {}
+
+    document.title = lang === "es"
+      ? "CANCHA SEGURA | Iniciativa Comunitaria"
+      : "CANCHA SEGURA | Community Initiative";
+  }
+
+  // Spanish first; a visitor who chose English sees English next time.
+  // ?lang=en in the link opens it in English (for sharing with English speakers).
+  (function () {
+    var q = new URLSearchParams(location.search).get("lang");
+    var saved = null;
+    try { saved = localStorage.getItem("cs-lang"); } catch (e) {}
+    setLanguage(q === "en" || q === "es" ? q : (saved === "en" ? "en" : "es"));
+  })();
+</script>
+
+</body>
+</html>
